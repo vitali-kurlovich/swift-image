@@ -31,7 +31,7 @@ let package = Package(
 
     dependencies: [
         .package(url: "https://github.com/vitali-kurlovich/swift-ui.git", from: "0.0.3"),
-        .package(url: "https://github.com/vitali-kurlovich/swift-mathkit.git", from: "0.0.1"),
+        .package(url: "https://github.com/vitali-kurlovich/swift-mathkit.git", from: "0.0.2"),
     ],
 
     targets: [

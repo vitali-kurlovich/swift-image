@@ -2,9 +2,8 @@
 //  Created by Vitali Kurlovich on 1.01.26.
 //
 
-import MathKit
-import MathTransform
 import SwiftUI
+import WarpTransform
 
 struct EditorGrid {
     let p0: CGPoint
@@ -30,9 +29,13 @@ struct EditorGrid {
         return path
     }
 
+    var transform: FreeDistortTransform<CGFloat> {
+        FreeDistortTransform(p0: p0, p1: p1, p2: p2, p3: p3)
+    }
+
     var origin: Path {
         var path = Path()
-        let transform = ControlPointsTransform(p0: p0, p1: p1, p2: p2, p3: p3)
+        let transform = self.transform
 
         let v0 = transform.transform(CGPoint(x: 0.5, y: 0))
         let v1 = transform.transform(CGPoint(x: 0.5, y: 1))
@@ -52,7 +55,7 @@ struct EditorGrid {
     var mediumGrid: Path {
         var path = Path()
 
-        let transform = ControlPointsTransform(p0: p0, p1: p1, p2: p2, p3: p3)
+        let transform = self.transform
 
         let locations = [0.25, 0.5, 0.75]
 
@@ -78,7 +81,7 @@ struct EditorGrid {
     var smallGrid: Path {
         var path = Path()
 
-        let transform = ControlPointsTransform(p0: p0, p1: p1, p2: p2, p3: p3)
+        let transform = self.transform
 
         let locations = [0.125, 0.375, 0.5, 0.625, 0.875]
 

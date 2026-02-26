@@ -63,6 +63,7 @@
 		5D9741222F50D29800DFE591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D9740E92F50D29800DFE591 /* Assets.xcassets */; };
 		5D9741302F50D32100DFE591 /* MathKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5D97412F2F50D32100DFE591 /* MathKit */; };
 		5DAAEB712F50E83600245B69 /* WarpSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5DAAEB702F50E83600245B69 /* WarpSwiftUI */; };
+		5DAAEB7C2F50EE8900245B69 /* WarpTransform in Frameworks */ = {isa = PBXBuildFile; productRef = 5DAAEB7B2F50EE8900245B69 /* WarpTransform */; };
 		5DF43B962F50B642000C8216 /* MathKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5DF43B952F50B642000C8216 /* MathKit */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 				5DAAEB712F50E83600245B69 /* WarpSwiftUI in Frameworks */,
 				5D9741302F50D32100DFE591 /* MathKit in Frameworks */,
 				5DF43B962F50B642000C8216 /* MathKit in Frameworks */,
+				5DAAEB7C2F50EE8900245B69 /* WarpTransform in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,12 +247,20 @@
 			path = WarpEditor;
 			sourceTree = "<group>";
 		};
+		5DAAEB7A2F50EE8900245B69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5DF43B372F50AEDF000C8216 = {
 			isa = PBXGroup;
 			children = (
 				5D9740EC2F50D29800DFE591 /* WarpEditor */,
 				5DF43B502F50AEE1000C8216 /* WarpEditorTests */,
 				5DF43B5A2F50AEE1000C8216 /* WarpEditorUITests */,
+				5DAAEB7A2F50EE8900245B69 /* Frameworks */,
 				5DF43B412F50AEDF000C8216 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -285,6 +295,7 @@
 				5DF43B952F50B642000C8216 /* MathKit */,
 				5D97412F2F50D32100DFE591 /* MathKit */,
 				5DAAEB702F50E83600245B69 /* WarpSwiftUI */,
+				5DAAEB7B2F50EE8900245B69 /* WarpTransform */,
 			);
 			productName = WrapEditor;
 			productReference = 5DF43B402F50AEDF000C8216 /* WrapEditor.app */;
@@ -874,6 +885,11 @@
 		5DAAEB702F50E83600245B69 /* WarpSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WarpSwiftUI;
+		};
+		5DAAEB7B2F50EE8900245B69 /* WarpTransform */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DAAEB6F2F50E83600245B69 /* XCLocalSwiftPackageReference "../../../swift-image" */;
+			productName = WarpTransform;
 		};
 		5DF43B952F50B642000C8216 /* MathKit */ = {
 			isa = XCSwiftPackageProductDependency;
