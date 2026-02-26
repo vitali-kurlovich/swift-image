@@ -54,9 +54,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func affine(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         #expect(tr.isUParallel)
         #expect(tr.isVParallel)
@@ -105,9 +105,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func pointsGrid(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         #expect(tr.isUParallel == false)
         #expect(tr.isVParallel == false)
@@ -127,9 +127,9 @@ struct FreeDistortTransformInverseTests {
         let transform: CoreAffineTransform = .rotate45
 
         let tr = FreeDistortTransform(p0: transform.transform(MKPoint(x: 0, y: 0)),
-                                        p1: transform.transform(MKPoint(x: 1, y: 0)),
-                                        p2: transform.transform(MKPoint(x: 0, y: 1)),
-                                        p3: transform.transform(MKPoint(x: 1, y: 1)))
+                                      p1: transform.transform(MKPoint(x: 1, y: 0)),
+                                      p2: transform.transform(MKPoint(x: 0, y: 1)),
+                                      p3: transform.transform(MKPoint(x: 1, y: 1)))
 
         let transformed = tr.transform(.init(x: 0.75, y: 0.5))
         let result = tr.inverse(transformed)
@@ -158,9 +158,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func сrossedU(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         for uv in UVGrid.uvs {
             let transformed = tr.transform(uv)
@@ -206,9 +206,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func сrossedV(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         for uv in UVGrid.uvs {
             let transformed = tr.transform(uv)
@@ -260,9 +260,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func skew(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         for uv in UVGrid.uvs {
             let transformed = tr.transform(uv)
@@ -310,9 +310,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func line(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         for uv in UVGrid.uvs {
             let transformed = tr.transform(uv)
@@ -334,9 +334,9 @@ struct FreeDistortTransformInverseTests {
     ])
     func point(_ points: PointsMap) {
         let tr = FreeDistortTransform(p0: points.p0,
-                                        p1: points.p1,
-                                        p2: points.p2,
-                                        p3: points.p3)
+                                      p1: points.p1,
+                                      p2: points.p2,
+                                      p3: points.p3)
 
         for uv in UVGrid.uvs {
             let transformed = tr.transform(uv)
