@@ -6,7 +6,7 @@ import MathKit
 import SwiftUI
 import VisualEffects
 
-public struct FreeDistortShader: LayerEffectShaderProvider, Sendable {
+public struct FreeDistortShader: LayerEffectShaderProvider, Sendable, Hashable {
     public var p0: CGVector
     public var p1: CGVector
     public var p2: CGVector

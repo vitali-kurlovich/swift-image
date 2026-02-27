@@ -3,12 +3,20 @@
 //
 
 import SwiftUI
+import WarpMetal
 
 @main
 struct WrapEditorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .task {
+                    do {
+                        try await FreeDistortShader().compile()
+                    } catch {
+                        assertionFailure(error.localizedDescription)
+                    }
+                }
         }
     }
 }
