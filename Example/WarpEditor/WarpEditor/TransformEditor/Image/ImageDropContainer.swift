@@ -6,27 +6,43 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ImageDropContainer: View {
-    @Binding var image: Image?
+    let imageCoordinator: ImageCoordinator
+
     @State private var isDropTargeted: Bool = false
 
     @State private var animationScale = 1.0
     @State private var animationOpacity = 0.0
+
+    @State private var fileImporterPresented: Bool = false
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 12)
                 .fill(Color.accentColor.gradient.tertiary.opacity(animationOpacity))
                 .overlay {
-                    if image == nil {
-                        ImageDropPlaceholder(isDropTargeted: $isDropTargeted)
-                            .scaleEffect(animationScale)
+                    if imageCoordinator.image == nil {
+                        ImageDropPlaceholder(isDropTargeted: $isDropTargeted) {
+                            fileImporterPresented.toggle()
+                        }
+                        .scaleEffect(animationScale)
                     }
                 }
+        }
+        .fileImporter(
+            isPresented: $fileImporterPresented,
+            allowedContentTypes: [.image]
+        ) { result in
+            switch result {
+            case let .success(file):
+                imageCoordinator.load(imageURL: file)
+            case let .failure(error):
+                imageCoordinator.catchError(error: error)
+            }
         }
         .dropDestination(
             for: Image.self
         ) { receivedImages, _ in
-            image = receivedImages.first
+            imageCoordinator.update(with: receivedImages.first)
         }
         #if os(macOS)
         .dropConfiguration { dropSession in

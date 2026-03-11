@@ -37,7 +37,7 @@ public extension FreeDistortTransform {
     var isUParallel: Bool {
         let d01 = p0 - p1
         let d23 = p2 - p3
-        
+
         //   dx01 dy23 - dx23 dy01
         //  (x2 (y0 - y1) + x3 (-y0 + y1) - (x0 - x1) (y2 - y3)) -> DU
         // dx23 dy01 - dx01 dy23 -> DU

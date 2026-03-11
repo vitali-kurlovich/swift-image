@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D3FA8882F61D6CF000D13D2 /* SwiftUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 5D3FA8872F61D6CF000D13D2 /* SwiftUIComponents */; };
+		5D3FA88A2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FA8892F61D74F000D13D2 /* ImageCoordinator.swift */; };
+		5D3FA88B2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FA8892F61D74F000D13D2 /* ImageCoordinator.swift */; };
+		5D3FA88C2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3FA8892F61D74F000D13D2 /* ImageCoordinator.swift */; };
 		5D9740ED2F50D29800DFE591 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D9740E92F50D29800DFE591 /* Assets.xcassets */; };
 		5D9740EE2F50D29800DFE591 /* TransformEditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9740DE2F50D29800DFE591 /* TransformEditorModel.swift */; };
 		5D9740EF2F50D29800DFE591 /* AnimatedPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9740D12F50D29800DFE591 /* AnimatedPlaceholder.swift */; };
@@ -85,6 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D3FA8892F61D74F000D13D2 /* ImageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCoordinator.swift; sourceTree = "<group>"; };
 		5D9740D12F50D29800DFE591 /* AnimatedPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPlaceholder.swift; sourceTree = "<group>"; };
 		5D9740D32F50D29800DFE591 /* EditorGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorGrid.swift; sourceTree = "<group>"; };
 		5D9740D42F50D29800DFE591 /* TransformEditorGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformEditorGrid.swift; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 			files = (
 				5DAAEB712F50E83600245B69 /* WarpSwiftUI in Frameworks */,
 				5D9741302F50D32100DFE591 /* MathKit in Frameworks */,
+				5D3FA8882F61D6CF000D13D2 /* SwiftUIComponents in Frameworks */,
 				5DF43B962F50B642000C8216 /* MathKit in Frameworks */,
 				5DAAEB7C2F50EE8900245B69 /* WarpTransform in Frameworks */,
 			);
@@ -170,6 +176,7 @@
 		5D9740D82F50D29800DFE591 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				5D3FA8892F61D74F000D13D2 /* ImageCoordinator.swift */,
 				5D9740D62F50D29800DFE591 /* ImageDropContainer.swift */,
 				5D9740D72F50D29800DFE591 /* ImageDropPlaceholder.swift */,
 			);
@@ -296,6 +303,7 @@
 				5D97412F2F50D32100DFE591 /* MathKit */,
 				5DAAEB702F50E83600245B69 /* WarpSwiftUI */,
 				5DAAEB7B2F50EE8900245B69 /* WarpTransform */,
+				5D3FA8872F61D6CF000D13D2 /* SwiftUIComponents */,
 			);
 			productName = WrapEditor;
 			productReference = 5DF43B402F50AEDF000C8216 /* WrapEditor.app */;
@@ -382,6 +390,7 @@
 			packageReferences = (
 				5D97412E2F50D32100DFE591 /* XCRemoteSwiftPackageReference "swift-mathkit" */,
 				5DAAEB6F2F50E83600245B69 /* XCLocalSwiftPackageReference "../../../swift-image" */,
+				5D3FA8862F61D6CF000D13D2 /* XCRemoteSwiftPackageReference "swift-ui" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5DF43B412F50AEDF000C8216 /* Products */;
@@ -439,6 +448,7 @@
 				5D9740F72F50D29800DFE591 /* View+TransformEditorToolbar.swift in Sources */,
 				5D9740F82F50D29800DFE591 /* CoordinateSpace.swift in Sources */,
 				5D9740F92F50D29800DFE591 /* ControlPointsResolver.swift in Sources */,
+				5D3FA88A2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */,
 				5D9740FA2F50D29800DFE591 /* EditorToolOverlayModifier.swift in Sources */,
 				5D9740FB2F50D29800DFE591 /* ImageDropContainer.swift in Sources */,
 				5D9740FC2F50D29800DFE591 /* ImageDropPlaceholder.swift in Sources */,
@@ -451,6 +461,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3FA88B2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */,
 				5D9741112F50D29800DFE591 /* TransformEditorModel.swift in Sources */,
 				5D9741122F50D29800DFE591 /* AnimatedPlaceholder.swift in Sources */,
 				5D9741132F50D29800DFE591 /* EditorGrid.swift in Sources */,
@@ -475,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D3FA88C2F61D74F000D13D2 /* ImageCoordinator.swift in Sources */,
 				5D9741002F50D29800DFE591 /* TransformEditorModel.swift in Sources */,
 				5D9741012F50D29800DFE591 /* AnimatedPlaceholder.swift in Sources */,
 				5D9741022F50D29800DFE591 /* EditorGrid.swift in Sources */,
@@ -866,6 +878,14 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5D3FA8862F61D6CF000D13D2 /* XCRemoteSwiftPackageReference "swift-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vitali-kurlovich/swift-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		5D97412E2F50D32100DFE591 /* XCRemoteSwiftPackageReference "swift-mathkit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vitali-kurlovich/swift-mathkit";
@@ -877,6 +897,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D3FA8872F61D6CF000D13D2 /* SwiftUIComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D3FA8862F61D6CF000D13D2 /* XCRemoteSwiftPackageReference "swift-ui" */;
+			productName = SwiftUIComponents;
+		};
 		5D97412F2F50D32100DFE591 /* MathKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5D97412E2F50D32100DFE591 /* XCRemoteSwiftPackageReference "swift-mathkit" */;

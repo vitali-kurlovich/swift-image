@@ -3,23 +3,37 @@
 //
 
 import SwiftUI
+import SwiftUIComponents
 
 struct ImageDropPlaceholder: View {
     @Binding var isDropTargeted: Bool
 
-    var body: some View {
-        VStack(spacing: 8) {
-            Image(systemName: "photo.badge.arrow.down")
-                .symbolRenderingMode(.hierarchical)
-                .font(
-                    .largeTitle
-                )
+    let action: @MainActor () -> Void
 
-            Text("Drag an image here!")
-                .font(.headline)
-                .foregroundColor(.gray)
+    init(isDropTargeted: Binding<Bool>, action: @escaping () -> Void = {}) {
+        _isDropTargeted = isDropTargeted
+        self.action = action
+    }
+
+    var body: some View {
+        Button {
+            action()
+        } label: {
+            VStack(spacing: 8) {
+                Image(systemName: "photo.badge.arrow.down")
+                    .symbolRenderingMode(.hierarchical)
+                    .font(
+                        .largeTitle
+                    )
+
+                Text("Drag an image here!")
+                    .font(.headline)
+                    .foregroundColor(.gray)
+            }
+            .padding()
+            .frame(aspectRatio: 1)
         }
-        .frame(minWidth: 200, minHeight: 200)
+        .buttonStyle(.borderless)
         .background {
             RoundedRectangle(cornerRadius: 42)
 

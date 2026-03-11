@@ -13,6 +13,16 @@ final class TransformEditorModel {
     }
 
     let contentType: ContentType
+    let imageCoordinator: ImageCoordinator = .init()
+
+    var image: Image? {
+        get {
+            imageCoordinator.image
+        }
+        set {
+            imageCoordinator.update(with: newValue)
+        }
+    }
 
     init(contentType: ContentType) {
         self.contentType = contentType
@@ -22,8 +32,6 @@ final class TransformEditorModel {
     var p1: CGVector = .zero
     var p2: CGVector = .zero
     var p3: CGVector = .zero
-
-    var image: Image?
 
     var contentGeometry = ContentGeometry()
     var controlsGeometry = ContentGeometry()

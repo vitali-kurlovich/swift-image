@@ -28,11 +28,11 @@ public struct FreeDistortShader: LayerEffectShaderProvider, Sendable, Hashable {
         let points = self.points(proxy)
 
         let tr = FreeDistortTransform(p0: points.0, p1: points.1, p2: points.2, p3: points.3)
-        
+
         if tr.isAffine {
             debugPrint(tr)
         }
-        
+
         return Shader(
             function: shaderFunction(for: "freeDistortWarp"),
             arguments: [

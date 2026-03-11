@@ -41,7 +41,7 @@ struct EditorToolOverlayModifier: ViewModifier {
                 }
             }.overlay {
                 if editorModel.contentType == .image {
-                    ImageDropContainer(image: $editorModel.image)
+                    ImageDropContainer(imageCoordinator: editorModel.imageCoordinator)
                 }
             }
     }
