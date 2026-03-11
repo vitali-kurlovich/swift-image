@@ -40,6 +40,7 @@ let package = Package(
         .target(
             name: "WarpMetal",
             dependencies: [
+                "WarpTransform",
                 .product(name: "VisualEffects", package: "swift-ui"),
                 .product(name: "MathKit", package: "swift-mathkit"),
             ],

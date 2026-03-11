@@ -5,6 +5,7 @@
 import MathKit
 import SwiftUI
 import VisualEffects
+import WarpTransform
 
 public struct FreeDistortShader: LayerEffectShaderProvider, Sendable, Hashable {
     public var p0: CGVector
@@ -26,8 +27,14 @@ public struct FreeDistortShader: LayerEffectShaderProvider, Sendable, Hashable {
     public func shader(_ proxy: GeometryProxy) -> Shader {
         let points = self.points(proxy)
 
+        let tr = FreeDistortTransform(p0: points.0, p1: points.1, p2: points.2, p3: points.3)
+        
+        if tr.isAffine {
+            debugPrint(tr)
+        }
+        
         return Shader(
-            function: shaderFunction(for: "controlPointsTransform"),
+            function: shaderFunction(for: "freeDistortWarp"),
             arguments: [
                 .boundingRect,
                 .float2(points.0),
@@ -70,7 +77,7 @@ private extension FreeDistortShader {
     func compiledShaders() -> [Shader] {
         [
             Shader(
-                function: shaderFunction(for: "controlPointsTransform"),
+                function: shaderFunction(for: "freeDistortWarp"),
                 arguments: [
                     .boundingRect,
                     .float2(CGPoint.zero),

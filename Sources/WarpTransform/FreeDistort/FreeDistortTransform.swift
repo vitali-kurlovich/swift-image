@@ -35,18 +35,13 @@ public extension FreeDistortTransform {
     }
 
     var isUParallel: Bool {
-        let x0 = p0.x, y0 = p0.y
-        let x1 = p1.x, y1 = p1.y
-        let x2 = p2.x, y2 = p2.y
-        let x3 = p3.x, y3 = p3.y
-
-        let dx01 = x0 - x1, dy01 = y0 - y1
-        let dx23 = x2 - x3, dy23 = y2 - y3
-
+        let d01 = p0 - p1
+        let d23 = p2 - p3
+        
         //   dx01 dy23 - dx23 dy01
         //  (x2 (y0 - y1) + x3 (-y0 + y1) - (x0 - x1) (y2 - y3)) -> DU
         // dx23 dy01 - dx01 dy23 -> DU
-        let DU = (dy01 * dx23).addingProduct(-dx01, dy23)
+        let DU = (d01.y * d23.x).addingProduct(-d01.x, d23.y)
 
         return abs(DU) <= epsilon
     }
@@ -101,10 +96,10 @@ extension FreeDistortTransform: Transform, InverseTransform {
         // |      |
         // p3 -- p2
 
-        let isP01P32Parallel = abs(DU) <= epsilon
-        let isP03P12Parallel = abs(DV) <= epsilon
+        let isUParallel = abs(DU) <= epsilon
+        let isVParallel = abs(DV) <= epsilon
 
-        let isAffine = isP01P32Parallel && isP03P12Parallel
+        let isAffine = isUParallel && isVParallel
 
         if isAffine {
             let divider = dy13 * x0 - dy03 * x1 + dy01 * x3
@@ -186,7 +181,7 @@ extension FreeDistortTransform: Transform, InverseTransform {
         // U -> (NN + SS)/(2 DU)
         let ur: Float // = (NN + SS) / (2 * DU)
 
-        if isP01P32Parallel {
+        if isUParallel {
             let vl = (CC + SS) / (2 * DV)
             let vr = (EE + SS) / (-2 * DV)
 
@@ -209,7 +204,7 @@ extension FreeDistortTransform: Transform, InverseTransform {
         // V -> -(EE + SS)/(2 DVR)
         let vr: Float
 
-        if isP03P12Parallel {
+        if isVParallel {
             vl = inverseV(by: ul, for: source)
             vr = inverseV(by: ur, for: source)
 
