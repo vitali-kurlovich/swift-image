@@ -36,7 +36,7 @@ jobs:
         uses: SwiftyLab/setup-swift@latest
 
       - name: Make dir for static content
-        run: mkdir pages && mkdir ./pages/lists && mkdir ./pages/caches
+        run: mkdir pages && mkdir ./pages/warp-transform && mkdir ./pages/warp-metal  && mkdir ./pages/warp-swiftui
       
       - name: Generate DocC WarpTransform
         run: swift package --allow-writing-to-directory ./.docs generate-documentation --target WarpTransform --output-path ./.docs --disable-indexing --transform-for-static-hosting --hosting-base-path swift-image/warp-transform
