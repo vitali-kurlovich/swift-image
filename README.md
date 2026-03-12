@@ -8,7 +8,7 @@
        
      https://github.com/user-attachments/assets/0ad906ed-3abc-41db-8c50-37736da217b6
 
-    2. Resolving the system of linear equations and optimization part 
+    2. [Resolving the system of linear equations and optimization part](https://github.com/vitali-kurlovich/swift-image/blob/main/Docs/Research/FreeDistort/FreeDistortSolverOptimization.nb) 
 
 
 Implementation of FreeDistort Warp for SwiftUI
