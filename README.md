@@ -8,6 +8,8 @@ Implementation of FreeDistort Warp for SwiftUI
 You can download the interactive [Wolfram Mathematica notebook](https://github.com/vitali-kurlovich/swift-image/blob/main/Docs/Research/FreeDistort/FreeDistortGraphics.nb) visualization 
 
 
+https://github.com/user-attachments/assets/0ad906ed-3abc-41db-8c50-37736da217b6
+
 
 
 [WarpEditor](https://github.com/vitali-kurlovich/swift-image/tree/main/Example/WarpEditor/WarpEditor) example app
