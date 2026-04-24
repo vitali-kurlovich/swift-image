@@ -50,7 +50,7 @@ private extension TransformEditorView {
         switch editorModel.contentType {
         case .animation:
             return true
-        case .image:
+        case .image, .coreImage:
             return editorModel.image != nil
         }
     }
@@ -65,8 +65,9 @@ private extension TransformEditorView {
             switch editorModel.contentType {
             case .animation:
                 AnimatedPlaceholder(scale: $scale)
-            case .image:
+            case .image, .coreImage:
                 editorModel.image
+           
             }
         }
     }

@@ -24,6 +24,14 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .padding()
             }
+
+            Tab("Core Image", systemImage: "camera.filters", value: .coreImage) {
+                //  TransformEditorView(editorModel: $imageEditorModel, configuration: $configuration)
+                //      .frame(maxWidth: .infinity, maxHeight: .infinity)
+                //      .padding()
+            }
+
+            // camera.filters
         }
         .toolbar(
             selection == .animation ? $animationEditorModel : $imageEditorModel,

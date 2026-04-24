@@ -52,6 +52,8 @@ struct EditorToolOverlayModifier: ViewModifier {
             return true
         case .image:
             return editorModel.image != nil
+        case .coreImage:
+            return false
         }
     }
 }

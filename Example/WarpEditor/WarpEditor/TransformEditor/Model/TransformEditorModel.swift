@@ -10,6 +10,7 @@ final class TransformEditorModel {
     enum ContentType: CaseIterable {
         case animation
         case image
+        case coreImage
     }
 
     let contentType: ContentType
