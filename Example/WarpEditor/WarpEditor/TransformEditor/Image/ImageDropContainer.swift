@@ -27,17 +27,17 @@ struct ImageDropContainer: View {
                         .scaleEffect(animationScale)
                     }
                 }
-        }
-        .fileImporter(
-            isPresented: $fileImporterPresented,
-            allowedContentTypes: [.image]
-        ) { result in
-            switch result {
-            case let .success(file):
-                imageCoordinator.load(imageURL: file)
-            case let .failure(error):
-                imageCoordinator.catchError(error: error)
-            }
+                .fileImporter(
+                    isPresented: $fileImporterPresented,
+                    allowedContentTypes: [.image]
+                ) { result in
+                    switch result {
+                    case let .success(file):
+                        imageCoordinator.load(imageURL: file)
+                    case let .failure(error):
+                        imageCoordinator.catchError(error: error)
+                    }
+                }
         }
         .dropDestination(
             for: Image.self
